@@ -33,10 +33,10 @@ export default function Root() {
         <nav>
           <ul>
             <li>
-              <Link to={`/contacts/1`}>Your Name</Link>
+              <Link to={`/contacts/1`} unstable_viewTransition>Your Name</Link>
             </li>
             <li>
-              <Link to={`/contacts/2`}>Your Friend</Link>
+              <Link to={`/contacts/2`} unstable_viewTransition>Your Friend</Link>
             </li>
           </ul>
         </nav>
