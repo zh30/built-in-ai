@@ -10,6 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@tonconnect/ui-react": "^2.0.2",
     "localforage": "^1.10.0",
     "match-sorter": "^6.3.4",
     "react": "19.0.0-rc-935180c7e0-20240524",

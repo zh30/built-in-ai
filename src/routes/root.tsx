@@ -1,8 +1,12 @@
+import { Outlet, Link } from 'react-router-dom';
+import { TonConnectButton } from '@tonconnect/ui-react';
+
 export default function Root() {
   return (
     <>
       <div id="sidebar">
         <h1>React Router Contacts</h1>
+        <TonConnectButton />
         <div>
           <form id="search-form" role="search">
             <input
@@ -22,22 +26,24 @@ export default function Root() {
               aria-live="polite"
             ></div>
           </form>
-          <form method="post">
+          {/* <form method="post">
             <button type="submit">New</button>
-          </form>
+          </form> */}
         </div>
         <nav>
           <ul>
             <li>
-              <a href={`/contacts/1`}>Your Name</a>
+              <Link to={`/contacts/1`}>Your Name</Link>
             </li>
             <li>
-              <a href={`/contacts/2`}>Your Friend</a>
+              <Link to={`/contacts/2`}>Your Friend</Link>
             </li>
           </ul>
         </nav>
       </div>
-      <div id="detail"></div>
+      <div id="detail">
+        <Outlet />
+      </div>
     </>
   );
 }
