@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-// import App from './App.tsx';
+import App from './App.tsx';
 import {
   createBrowserRouter,
   RouterProvider,
@@ -9,7 +9,7 @@ import './index.css';
 import Root from './routes/root.tsx';
 import ErrorPage from './error-page.tsx';
 import Contact from './routes/contact.tsx';
-import { TonConnectUIProvider } from '@tonconnect/ui-react';
+// import { TonConnectUIProvider } from '@tonconnect/ui-react';
 
 const router = createBrowserRouter([
   {
@@ -18,8 +18,14 @@ const router = createBrowserRouter([
     errorElement: <ErrorPage />,
     children: [
       {
+        index: true,
+        element: <App />,
+        errorElement: <ErrorPage />,
+      },
+      {
         path: "contacts/:contactId",
         element: <Contact />,
+        errorElement: <ErrorPage />,
       },
     ],
   },
@@ -27,8 +33,8 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <TonConnectUIProvider manifestUrl="https://react19.zhanghe.dev/tonconnect-manifest.json">
+    {/* <TonConnectUIProvider manifestUrl="https://react19.zhanghe.dev/tonconnect-manifest.json"> */}
       <RouterProvider router={router} />
-    </TonConnectUIProvider>
+    {/* </TonConnectUIProvider> */}
   </React.StrictMode>,
 )

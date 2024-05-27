@@ -1,12 +1,12 @@
 import { Outlet, Link } from 'react-router-dom';
-import { TonConnectButton } from '@tonconnect/ui-react';
+// import { TonConnectButton } from '@tonconnect/ui-react';
 
 export default function Root() {
   return (
     <>
       <div id="sidebar">
         <h1>React Router Contacts</h1>
-        <TonConnectButton />
+        {/* <TonConnectButton /> */}
         <div>
           <form id="search-form" role="search">
             <input
