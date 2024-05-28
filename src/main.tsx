@@ -5,7 +5,7 @@ import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
-import './index.css';
+import './globals.css';
 import Root from './routes/root.tsx';
 import ErrorPage from './error-page.tsx';
 import Contact from './routes/contact.tsx';
@@ -34,7 +34,7 @@ const router = createBrowserRouter([
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     {/* <TonConnectUIProvider manifestUrl="https://react19.zhanghe.dev/tonconnect-manifest.json"> */}
-      <RouterProvider router={router} />
+    <RouterProvider router={router} />
     {/* </TonConnectUIProvider> */}
   </React.StrictMode>,
 )
