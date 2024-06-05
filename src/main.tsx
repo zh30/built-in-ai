@@ -5,6 +5,7 @@ import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
+import 'atropos/css';
 import './globals.css';
 import Root from './routes/root.tsx';
 import ErrorPage from './error-page.tsx';
