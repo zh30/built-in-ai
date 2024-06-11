@@ -10,7 +10,7 @@ type ChatUIProps = {
   id: string;
 }
 const ChatUI = ({ id, prompt }: ChatUIProps) => {
-  const [loading, setLoading] = useState(false);
+  // const [loading, setLoading] = useState(false);
   const [answer, setAnswer] = useState('');
   const [time, setTime] = useState('')
   const formattedTime = () => {
@@ -24,19 +24,18 @@ const ChatUI = ({ id, prompt }: ChatUIProps) => {
   }
   const handleFetch = useCallback(async () => {
     try {
-      setLoading(true);
+      // setLoading(true);
       setTime(formattedTime());
-      const session = await window.ai.createTextSession();
+      const session = await window?.ai?.createTextSession();
       const stream = session.promptStreaming(prompt);
       for await (const chunk of stream) {
         setAnswer(chunk);
       }
       session.destroy();
-      setLoading(false);
     } catch (error) {
       console.error('Error:', error);
     }
-    setLoading(false);
+    // setLoading(false);
   }, [prompt])
 
   useEffect(() => {
