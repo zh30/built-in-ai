@@ -4,6 +4,7 @@ export default {
   darkMode: ["class"],
   content: [
     './src/**/*.{ts,tsx}',
+    './index.html'
   ],
   prefix: "",
   theme: {
@@ -71,5 +72,5 @@ export default {
       },
     },
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [require("tailwindcss-animate"), require('@tailwindcss/typography')],
 }

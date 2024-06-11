@@ -9,7 +9,7 @@ import 'atropos/css';
 import './globals.css';
 import Root from './routes/root.tsx';
 import ErrorPage from './error-page.tsx';
-import Contact from './routes/contact.tsx';
+// import Genai from './routes/genai.tsx';
 // import { TonConnectUIProvider } from '@tonconnect/ui-react';
 
 const router = createBrowserRouter([
@@ -23,11 +23,11 @@ const router = createBrowserRouter([
         element: <App />,
         errorElement: <ErrorPage />,
       },
-      {
-        path: "contacts/:contactId",
-        element: <Contact />,
-        errorElement: <ErrorPage />,
-      },
+      // {
+      //   path: "genai",
+      //   element: <Genai />,
+      //   errorElement: <ErrorPage />,
+      // },
     ],
   },
 ]);

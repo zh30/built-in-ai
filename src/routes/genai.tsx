@@ -9,7 +9,7 @@ export type ContactType = {
   favorite?: boolean;
 }
 
-export default function Contact() {
+export default function Genai() {
   const contact = {
     first: "Your",
     last: "Name",
@@ -20,7 +20,23 @@ export default function Contact() {
   };
 
   return (
-    <div id="contact">
+    <div className="px-4">
+      {/* <Atropos
+        activeOffset={20}
+        // shadowScale={1.05}
+        onEnter={() => console.log('Enter')}
+        onLeave={() => console.log('Leave')}
+        onRotate={(x, y) => console.log('Rotate', x, y)}
+      >
+        <div className='bg-white p-4 rounded-lg shadow-md'>
+          <a href="https://vitejs.dev" target="_blank">
+            <img src={viteLogo} className="logo" alt="Vite logo" />
+          </a>
+          <a href="https://react.dev" target="_blank">
+            <img src={reactLogo} className="logo react" alt="React logo" />
+          </a>
+        </div>
+      </Atropos> */}
       <div>
         <img
           key={contact.avatar}

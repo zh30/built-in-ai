@@ -1,29 +1,24 @@
 import { Button } from '@/components/ui/button';
+import { Toaster } from '@/components/ui/sonner';
 import { Outlet, Link } from 'react-router-dom';
 // import { TonConnectButton } from '@tonconnect/ui-react';
 
 export default function Root() {
   return (
     <>
-      <div id="sidebar">
+      <nav className='flex gap-4 justify-center items-center flex-wrap p-2'>
         <Link to="/" unstable_viewTransition>
-          <Button>Home</Button>
+          <Button variant="outline">Home</Button>
         </Link>
-        {/* <TonConnectButton /> */}
-        <nav>
-          <ul>
-            <li>
-              <Link to={`/contacts/1`} unstable_viewTransition>Your Name</Link>
-            </li>
-            <li>
-              <Link to={`/contacts/2`} unstable_viewTransition>Your Friend</Link>
-            </li>
-          </ul>
-        </nav>
-      </div>
-      <div id="detail">
+        {/* <Link to={`/genai`} unstable_viewTransition>
+          <Button variant="outline">Gen AI</Button>
+        </Link> */}
+        {/* <Link to={`/contacts/2`} unstable_viewTransition>Your Friend</Link> */}
+      </nav>
+      <main className='p-4'>
         <Outlet />
-      </div>
+      </main>
+      <Toaster position="top-center" />
     </>
   );
 }
