@@ -122,8 +122,8 @@ function App() {
         <Button onClick={handleSend} disabled={!canCreate || loading}>{loading ? 'loading...' : 'Send message'}</Button>
       </div>
       <div className='pt-4'>
-        {notSupproted && <div className='text-center space-y-2'>
-          <h2 className='text-2xl font-bold text-red-500'>Browser not supported</h2>
+        {notSupproted && <div className='space-y-2 text-sm'>
+          <h2 className='text-center text-2xl font-bold text-red-500'>Browser not supported</h2>
           <p>1, Please use Chrome Canary, <a className='ml-2 text-gray-500' target="_blank" href='https://www.google.com/chrome/canary'>click here to download</a></p>
           <p>2, Go `chrome://flags/#optimization-guide-on-device-model`, set `Enable BypassPerfRequirment` ( No `Enable`)</p>
           <p>3, Go `chrome://flags/#prompt-api-for-gemini-nano`, set `Enable`</p>
