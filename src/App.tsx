@@ -57,7 +57,7 @@ const ChatUI = ({ id, prompt }: ChatUIProps) => {
       <div className=''>
         <div className='overflow-hidden relative max-w-2xl min-h-20 bg-gradient-to-r from-cyan-500 to-blue-500 shadow-lg ring-1 ring-black/5 rounded-xl inline-flex items-center gap-6 dark:bg-slate-800 dark:highlight-white/5'>
           <div className='flex flex-col w-full p-5'>
-            <p className='markdown prose text-white w-full break-words dark:prose-invert dark' dangerouslySetInnerHTML={htmlflow}></p>
+            <p className='markdown prose prose-neutral prose-headings:text-white prose-code:text-white text-white w-full break-words' dangerouslySetInnerHTML={htmlflow}></p>
           </div>
         </div>
       </div>
@@ -119,7 +119,7 @@ function App() {
           }}
           onChange={({ target: { value } }) => setPrompt(value)}
         />
-        <Button onClick={handleSend} disabled={!canCreate || loading}>{loading ? 'loading...' : 'Send message'}</Button>
+        <Button variant="outline" size="lg" onClick={handleSend} disabled={!canCreate || loading}>{loading ? 'loading...' : 'Send message'}</Button>
       </div>
       <div className='pt-4'>
         {notSupproted && <div className='space-y-2 text-sm'>
