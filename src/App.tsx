@@ -70,6 +70,7 @@ function App() {
   const [prompt, setPrompt] = useState('');
   const [loading, setLoading] = useState(false);
   const [chatList, setChatList] = useState<ChatUIProps[]>([]);
+  const [isTyping, setIsTyping] = useState<boolean>(false)
   const handleSend = useCallback(async () => {
     if (prompt.trim().length < 1) {
       toast.info("Please enter a prompt");
@@ -109,10 +110,12 @@ function App() {
           placeholder="Type your message here."
           value={prompt}
           disabled={!canCreate}
+          onCompositionStart={() => setIsTyping(true)}
+          onCompositionEnd={() => setIsTyping(false)}
           onKeyDown={(e) => {
             const { key } = e;
-
-            if (key === 'Enter' && !loading) {
+            
+            if (!isTyping && key === "Enter" && !e.shiftKey && !loading) {
               e.preventDefault()
               handleSend()
             }
