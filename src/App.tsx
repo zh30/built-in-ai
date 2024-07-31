@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useMemo, useState } from 'react'
 import { Textarea } from './components/ui/textarea'
 import { Button } from './components/ui/button'
-import manImage from '/android-chrome-192x192.png'
+// import manImage from '/android-chrome-192x192.png'
 import { toast } from 'sonner';
 import { marked } from "marked";
 
@@ -47,17 +47,17 @@ const ChatUI = ({ id, prompt }: ChatUIProps) => {
     <div className='space-y-2' key={id}>
       <div className='text-right'>
         <div className='overflow-hidden relative max-w-sm bg-white shadow-lg ring-1 ring-black/5 rounded-xl inline-flex items-center gap-6 dark:bg-slate-800 dark:highlight-white/5'>
-          <img src={manImage} className='absolute -right-6 w-24 h-24 rounded-full shadow-lg' />
-          <div className='flex flex-col w-full py-5 pl-5 pr-24 text-right'>
+          {/* <img src={manImage} className='absolute -right-6 w-24 h-24 rounded-full shadow-lg' /> */}
+          <div className='flex flex-col w-full py-2 px-5 text-right'>
             <strong className='text-slate-900 text-base font-medium dark:text-slate-200'>{prompt}</strong>
             <span className='text-slate-500 text-sm font-medium dark:text-slate-400'>{time}</span>
           </div>
         </div>
       </div>
       <div className=''>
-        <div className='overflow-hidden relative max-w-2xl min-h-20 bg-gradient-to-r from-cyan-500 to-blue-500 shadow-lg ring-1 ring-black/5 rounded-xl inline-flex items-center gap-6 dark:bg-slate-800 dark:highlight-white/5'>
-          <div className='flex flex-col w-full p-5'>
-            <p className='markdown prose prose-neutral prose-headings:text-white prose-code:text-white text-white w-full break-words' dangerouslySetInnerHTML={htmlflow}></p>
+        <div className='overflow-hidden relative max-w-2xl min-h-11 shadow-lg ring-1 ring-black/5 rounded-xl inline-flex items-center gap-6 dark:bg-slate-800 dark:highlight-white/5'>
+          <div className='flex flex-col w-full px-5 py-2'>
+            <p className='markdown prose w-full break-words' dangerouslySetInnerHTML={htmlflow}></p>
           </div>
         </div>
       </div>
@@ -90,7 +90,7 @@ function App() {
     setPrompt('');
   }, [prompt]);
   const checkCanCreate = useCallback(async () => {
-    const canCreate = await window?.ai?.canCreateGenericSession();
+    const canCreate = await window?.ai?.canCreateTextSession();
 
     if (!canCreate) {
       setNotSupported(true);
@@ -114,7 +114,7 @@ function App() {
           onCompositionEnd={() => setIsTyping(false)}
           onKeyDown={(e) => {
             const { key } = e;
-            
+
             if (!isTyping && key === "Enter" && !e.shiftKey && !loading) {
               e.preventDefault()
               handleSend()

@@ -5,13 +5,7 @@ import path from "path"
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [react({
-    babel: {
-      plugins: [
-        "babel-plugin-react-compiler"
-      ]
-    }
-  }), VitePWA({
+  plugins: [react(), VitePWA({
     registerType: 'autoUpdate', devOptions: {
       enabled: true
     }
